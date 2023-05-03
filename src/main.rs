@@ -3,11 +3,11 @@ use library_system::Library;
 use library_system::Book;
 
 fn main() {
-    let mut library = Library {
+    let library = Library {
         name: String::from("Malcom X")
     };
 
-    // let library_clone = library.clone();
+    let library_clone = library.clone();
 
     let book = Book {
         name: String::from("The Edge of AI"),
@@ -16,6 +16,6 @@ fn main() {
         library,
     };
 
-    println!("library created: {:?}", library);
+    println!("library created: {:?}", library_clone);
     println!("booked created {:?}", book);
 }

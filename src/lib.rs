@@ -1,20 +1,35 @@
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Status {
     Free,
     Booked,
 }
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Clone)]
 pub struct Library {
     pub name: String,
 }
-#[derive(Debug, Copy, Clone)]
+
+// impl Copy for Library {}
+
+// impl Clone for Library {
+//     fn clone(&self) -> Library {
+//         *self
+//     }
+// }
+
+#[derive(Debug, Clone)]
 pub struct Book {
     pub name: String,
     pub author: String,
     pub released_date: String,
     pub library: Library,
 }
+
+// impl Clone for Book {
+//     fn clone(&self) -> Book {
+//         *self
+//     }
+// }
 
 // impl Copy for Book {
 
