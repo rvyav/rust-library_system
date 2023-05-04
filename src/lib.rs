@@ -5,6 +5,12 @@ pub enum Status {
 }
 
 #[derive(Debug, Clone)]
+pub enum BookStatus {
+    Free,
+    Booked,
+}
+
+#[derive(Debug, Clone)]
 pub struct Library {
     pub name: String,
 }
@@ -22,8 +28,17 @@ pub struct Book {
     pub name: String,
     pub author: String,
     pub released_date: String,
+    pub status: BookStatus,
     pub library: Library,
 }
+
+// impl Book {
+//     pub fn new(book: Book) {
+//         Self {
+
+//         }
+//     }
+// }
 
 // impl Clone for Book {
 //     fn clone(&self) -> Book {
