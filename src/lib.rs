@@ -1,10 +1,4 @@
 #[derive(Debug, Clone)]
-pub enum Status {
-    Free,
-    Booked,
-}
-
-#[derive(Debug, Clone)]
 pub enum BookStatus {
     Free,
     Booked,

@@ -7,11 +7,7 @@ fn main() {
         name: String::from("Malcom X")
     };
 
-    let book_status = Library {
-        name: String::from("Malcom X")
-    };
-
-    let book_status_clone = &book_status.clone();
+    let library_clone = library.clone();
 
     let book = Book {
         name: String::from("The Edge of AI"),
@@ -21,6 +17,6 @@ fn main() {
         library,
     };
 
-    println!("book_status_clone created: {:?}", book_status_clone);
+    println!("library created: {:?}", &library_clone);
     println!("booked created {:?}", &book);
 }
