@@ -9,14 +9,6 @@ pub struct Library {
     pub name: String,
 }
 
-// impl Copy for Library {}
-
-// impl Clone for Library {
-//     fn clone(&self) -> Library {
-//         *self
-//     }
-// }
-
 #[derive(Debug, Clone)]
 pub struct Book {
     pub name: String,
@@ -25,6 +17,24 @@ pub struct Book {
     pub status: BookStatus,
     pub library: Library,
 }
+
+impl Book {
+    pub fn new(library: Library) -> Self {
+        Book {
+            name: String::from("The Edge of AI"),
+            author: String::from("Clement Adams"),
+            released_date: String::from("06/01/2021"),
+            status: BookStatus::Free,
+            library,
+        }
+    }
+}
+
+// impl Default for Book {
+//     fn default() -> Self {
+//         Self::new()
+//     }
+// }
 
 // impl Book {
 //     pub fn new(book: Book) {
