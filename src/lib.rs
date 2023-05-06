@@ -19,12 +19,19 @@ pub struct Book {
 }
 
 impl Book {
-    pub fn new(library: Library) -> Self {
+    pub fn new(
+        name: String,
+        author: String,
+        released_date: String,
+        status: BookStatus,
+        library: Library
+    ) -> Self {
+
         Book {
-            name: String::from("The Edge of AI"),
-            author: String::from("Clement Adams"),
-            released_date: String::from("06/01/2021"),
-            status: BookStatus::Free,
+            name,
+            author,
+            released_date,
+            status,
             library,
         }
     }
