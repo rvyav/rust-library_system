@@ -43,6 +43,13 @@ impl Book {
         println!("Book status is: {:?}", self.status);
         println!("Book library is: {}", self.library.name);
     }
+
+    pub fn check_status_type(&self) {
+        match self.status {
+            BookStatus::Booked => println!("Book status is BOOKED"),
+            BookStatus::Free => println!("Book status is FREE"),
+        }
+    }
 }
 
 // impl Default for Book {

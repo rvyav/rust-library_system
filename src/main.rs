@@ -10,7 +10,7 @@ fn main() {
         name: String::from("Fast Forward Learning Center")
     };
 
-    let library_clone = library.clone();
+    // let library_clone = library.clone();
 
     let book = Book::new(
         String::from("The Edge of AI"),
@@ -22,16 +22,16 @@ fn main() {
 
     // unsafe {
     //     let count = books_available(INSTANCE_COUNT);
-
     //     println!("count: {}", count);
     // }
-
 
     // println!("library created: {:?}", &library_clone);
     // println!("booked created {:?}", &book);
 
     // check
     book.book_details();
+
+    book.check_status();
 }
 
 
