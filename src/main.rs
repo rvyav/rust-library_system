@@ -31,7 +31,7 @@ fn main() {
     // check
     book.book_details();
 
-    book.check_status();
+    book.check_status_type();
 }
 
 
