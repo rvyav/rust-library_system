@@ -20,12 +20,22 @@ fn main() {
         library,
     );
 
-    unsafe {
-        let count = &INSTANCE_COUNT + 1;
+    // unsafe {
+    //     let count = books_available(INSTANCE_COUNT);
 
-        println!("count: {}", count);
-    }
+    //     println!("count: {}", count);
+    // }
 
-    println!("library created: {:?}", &library_clone);
-    println!("booked created {:?}", &book);
+
+    // println!("library created: {:?}", &library_clone);
+    // println!("booked created {:?}", &book);
+
+    // check
+    book.book_details();
 }
+
+
+// fn books_available(instance_count: i32) -> i32 {
+//     let instance_count = instance_count + 1;
+//     instance_count
+// }

@@ -35,6 +35,13 @@ impl Book {
             library,
         }
     }
+
+    pub fn book_details(&self) {
+        println!("Book name is: {}", self.name);
+        println!("Book author is: {}", self.author);
+        println!("Book released_date is: {}", self.released_date);
+        println!("Book library is: {}", self.library.name);
+    }
 }
 
 // impl Default for Book {
