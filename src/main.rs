@@ -7,10 +7,11 @@ static mut INSTANCE_COUNT: i32 = 0;
 fn main() {
 
     let library = Library {
-        name: String::from("Fast Forward Learning Center")
+        name: String::from("Fast Forward Learning Center"),
+        books: vec![],
     };
 
-    // let library_clone = library.clone();
+    let mut library_ = library.clone();
 
     let book = Book::new(
         String::from("The Edge of AI"),
@@ -19,6 +20,8 @@ fn main() {
         BookStatus::Free,
         library,
     );
+
+    library_.books.push(String::from(&book.name));
 
     // unsafe {
     //     let count = books_available(INSTANCE_COUNT);
@@ -29,9 +32,11 @@ fn main() {
     // println!("booked created {:?}", &book);
 
     // check
-    book.book_details();
+    // book.book_details();
 
-    book.check_status_type();
+    // book.check_status_type();
+
+    println!("library clone {:?}", library_);
 }
 
 

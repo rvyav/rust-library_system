@@ -7,6 +7,7 @@ pub enum BookStatus {
 #[derive(Debug, Clone)]
 pub struct Library {
     pub name: String,
+    pub books: Vec<String>,
 }
 
 #[derive(Debug, Clone)]
