@@ -10,6 +10,32 @@ pub struct Library {
     pub books: Vec<String>,
 }
 
+impl Library {
+    pub fn new(
+        name: String,
+        books: Vec<String>
+    ) -> Self {
+
+        Library {
+            name,
+            books,
+        }
+    }
+
+    pub fn books_availbable() {
+    }
+
+    pub fn lend_book(&self, name: &String) {
+        let mut current_books = self.books.clone();
+        if current_books.contains(name) {
+            current_books.retain(|value| value != name);
+            println!("mutated vector without value {:?}", current_books);
+        } else {
+            println!("argument found: {}", name);
+        }
+    }
+}
+
 #[derive(Debug, Clone)]
 pub struct Book {
     pub name: String,
@@ -45,12 +71,13 @@ impl Book {
         println!("Book library is: {}", self.library.name);
     }
 
-    pub fn check_status_type(&self) {
+    pub fn check_book_status_type(&self) {
         match self.status {
             BookStatus::Booked => println!("Book status is BOOKED"),
             BookStatus::Free => println!("Book status is FREE"),
         }
     }
+
 }
 
 // impl Default for Book {

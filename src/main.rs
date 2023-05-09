@@ -6,10 +6,10 @@ use library_system::Book;
 static mut INSTANCE_COUNT: i32 = 0;
 fn main() {
 
-    let library = Library {
-        name: String::from("Fast Forward Learning Center"),
-        books: vec![],
-    };
+    let library = Library::new(
+        String::from("Fast Forward Learning Center"),
+        vec![],
+    );
 
     let mut library_ = library.clone();
 
@@ -34,9 +34,13 @@ fn main() {
     // check
     // book.book_details();
 
-    // book.check_status_type();
+    // book.check_book_status_type();
 
-    println!("library clone {:?}", library_);
+    // println!("library clone {:?}", library_);
+
+    // lend book
+    library_.lend_book(&library_.name);
+
 }
 
 
