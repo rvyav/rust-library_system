@@ -10,6 +10,22 @@ pub struct Library {
     pub books: Vec<String>,
 }
 
+#[derive(Debug, Clone)]
+pub struct Book {
+    pub name: String,
+    pub author: String,
+    pub released_date: String,
+    pub status: BookStatus,
+    pub library: Library,
+}
+
+#[derive(Debug, Clone)]
+pub struct Student {
+    pub name: String,
+    pub books: Vec<String>,
+}
+
+
 impl Library {
     pub fn new(
         name: String,
@@ -38,14 +54,6 @@ impl Library {
     }
 }
 
-#[derive(Debug, Clone)]
-pub struct Book {
-    pub name: String,
-    pub author: String,
-    pub released_date: String,
-    pub status: BookStatus,
-    pub library: Library,
-}
 
 impl Book {
     pub fn new(
@@ -79,8 +87,23 @@ impl Book {
             BookStatus::Free => println!("Book status is FREE"),
         }
     }
+}
 
-    pub fn view_borrowed_books() {
+
+impl Student {
+    pub fn new(
+        name: String,
+        books: Vec<String>
+    ) -> Self {
+
+        Self {
+            name,
+            books,
+        }
+    }
+
+    // borrowed books
+    pub fn view_borrowed() {
     }
 
     pub fn request_book() {
@@ -88,8 +111,6 @@ impl Book {
 
     pub fn return_book() {
     }
-
-
 }
 
 // impl Default for Book {
