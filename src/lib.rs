@@ -16,7 +16,7 @@ impl Library {
         books: Vec<String>
     ) -> Self {
 
-        Library {
+        Self {
             name,
             books,
         }
@@ -28,6 +28,8 @@ impl Library {
     pub fn lend_book(&self, name: &String) {
         let mut current_books = self.books.clone();
         if current_books.contains(name) {
+            // remove 'book name' from 
+            // the list of books available
             current_books.retain(|value| value != name);
             println!("mutated vector without value {:?}", current_books);
         } else {
@@ -54,7 +56,7 @@ impl Book {
         library: Library
     ) -> Self {
 
-        Book {
+        Self {
             name,
             author,
             released_date,
@@ -77,6 +79,16 @@ impl Book {
             BookStatus::Free => println!("Book status is FREE"),
         }
     }
+
+    pub fn view_borrowed_books() {
+    }
+
+    pub fn request_book() {
+    }
+
+    pub fn return_book() {
+    }
+
 
 }
 
