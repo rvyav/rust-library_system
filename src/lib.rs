@@ -38,7 +38,7 @@ impl Library {
         }
     }
 
-    pub fn books_availbable() {
+    pub fn books_available() {
     }
 
     pub fn lend_book(&self, name: &String) {
@@ -47,9 +47,9 @@ impl Library {
             // remove 'book name' from 
             // the list of books available
             current_books.retain(|value| value != name);
-            println!("mutated vector without value {:?}", current_books);
+            println!("books left and available in the library to borrow: {:?}", current_books);
         } else {
-            println!("argument found: {}", name);
+            println!("book: {} not found in the library", name);
         }
     }
 }
@@ -83,8 +83,8 @@ impl Book {
 
     pub fn check_book_status_type(&self) {
         match self.status {
-            BookStatus::Booked => println!("Book status is BOOKED"),
-            BookStatus::Free => println!("Book status is FREE"),
+            BookStatus::Booked => println!("status is BOOKED"),
+            BookStatus::Free => println!("status is FREE"),
         }
     }
 }
