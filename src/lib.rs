@@ -47,6 +47,7 @@ impl Library {
             // remove 'book name' from 
             // the list of books available
             current_books.retain(|value| value != name);
+            println!("book {:?} has been lent to a user and removed to the library ", name);
             println!("books left and available in the library to borrow: {:?}", current_books);
         } else {
             println!("book: {} not found in the library", name);
