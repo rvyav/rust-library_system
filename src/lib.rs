@@ -5,6 +5,12 @@ pub enum BookStatus {
 }
 
 #[derive(Debug, Clone)]
+pub enum StudentBooks<T> {
+    Some(T),
+    None,
+}
+
+#[derive(Debug, Clone)]
 pub struct Library {
     pub name: String,
     pub books: Vec<String>,
@@ -23,6 +29,7 @@ pub struct Book {
 pub struct Student {
     pub name: String,
     pub books: Vec<String>,
+    pub library: Library,
 }
 
 
@@ -94,12 +101,14 @@ impl Book {
 impl Student {
     pub fn new(
         name: String,
-        books: Vec<String>
+        books: Vec<String>,
+        library: Library
     ) -> Self {
 
         Self {
             name,
             books,
+            library,
         }
     }
 
