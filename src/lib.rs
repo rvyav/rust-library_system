@@ -28,8 +28,7 @@ pub struct Book {
 #[derive(Debug, Clone)]
 pub struct Student {
     pub name: String,
-    pub books: Vec<String>,
-    pub library: Library,
+    pub books: Vec<String>
 }
 
 
@@ -101,14 +100,12 @@ impl Book {
 impl Student {
     pub fn new(
         name: String,
-        books: Vec<String>,
-        library: Library
+        books: Vec<String>
     ) -> Self {
 
         Self {
             name,
-            books,
-            library,
+            books
         }
     }
 
