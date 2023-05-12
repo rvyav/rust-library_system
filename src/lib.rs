@@ -122,10 +122,11 @@ impl Student {
         }
     }
 
-    pub fn request_book(&mut self, name: &String, library: &Library, book: &Book) {
+    pub fn request_book(&mut self, name: &String, library: &Library, book: &mut Book) {
         if library.books.contains(name) && (&book.name == name && book.status == BookStatus::Free) {
             // allow the library to lend the book
             library.lend_book(name);
+            book.status = BookStatus::Booked;
             // add the book name to 'student' books vector
             self.books.push(name.to_string());
         }
