@@ -111,8 +111,14 @@ impl Student {
 
     // borrowed books
     pub fn view_borrowed(&self) {
-        for (idx, value) in self.books.iter().enumerate() {
-            println!("book {} at index: {}", value, idx);
+        let borrowed_books = &self.books;
+
+        if !borrowed_books.is_empty() {
+            for (idx, value) in self.books.iter().enumerate() {
+                println!("book {} at index: {}", value, idx);
+            }
+        } else {
+            println!("You have no borrowed books at the moment!.");
         }
     }
 
