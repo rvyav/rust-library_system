@@ -3,7 +3,7 @@ use library_system::{ BookStatus, Library };
 use library_system::Book;
 
 
-static mut INSTANCE_COUNT: i32 = 0;
+// static mut INSTANCE_COUNT: i32 = 0;
 fn main() {
 
     let library = Library::new(
