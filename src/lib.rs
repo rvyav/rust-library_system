@@ -127,11 +127,17 @@ impl Student {
             // allow the library to lend the book
             library.lend_book(name);
             book.status = BookStatus::Booked;
-            // add the book name to 'student' books vector
+            // add the book name to 'Student' books vector
             self.books.push(name.to_string());
         }
     }
 
-    pub fn return_book() {
+    pub fn return_book(&mut self, name: &String, library: &mut Library, book: &mut Book) {
+        if !library.books.contains(name) && (&book.name == name && book.status == BookStatus::Booked) {
+            library.books.push(name.to_string());
+            book.status = BookStatus::Booked;
+            // remove book from 'Student' list of books
+            self.books.retain(|value| value != &name.to_string());
+        }
     }
 }
