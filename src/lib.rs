@@ -110,10 +110,13 @@ impl Student {
     }
 
     // borrowed books
-    pub fn view_borrowed() {
+    pub fn view_borrowed(&self) {
+        for (idx, value) in self.books.iter().enumerate() {
+            println!("book {} at index: {}", value, idx);
+        }
     }
 
-    pub fn request_book() {
+    pub fn request_book(&self, name: String) {
     }
 
     pub fn return_book() {
