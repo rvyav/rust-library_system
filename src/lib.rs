@@ -1,4 +1,4 @@
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum BookStatus {
     Free,
     Booked,
@@ -122,7 +122,13 @@ impl Student {
         }
     }
 
-    pub fn request_book(&self, name: String) {
+    pub fn request_book(&mut self, name: &String, library: &Library, book: &Book) {
+        if library.books.contains(name) && (&book.name == name && book.status == BookStatus::Free) {
+            // allow the library to lend the book
+            library.lend_book(name);
+            // add the book name to 'student' books vector
+            self.books.push(name.to_string());
+        }
     }
 
     pub fn return_book() {
