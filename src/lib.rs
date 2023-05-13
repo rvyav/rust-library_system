@@ -44,7 +44,10 @@ impl Library {
         }
     }
 
-    pub fn books_available() {
+    pub fn books_available(&self) {
+        for book in self.books.iter() {
+            println!("Book: {} is available", book);
+        }
     }
 
     pub fn lend_book(&self, name: &String) {
